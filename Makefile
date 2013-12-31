@@ -1,7 +1,8 @@
 filename=YOUR_MAIN_LATEX_FILE_NAME_WITHOUT_THE_.tex
 
 pdf: ps
-	ps2pdf -dPDFSETTINGS=/printer ${filename}.ps
+	# ps2pdf -dPDFSETTINGS=/printer ${filename}.ps
+	ps2pdf ${filename}.ps
 
 pdf: ps
 	ps2pdf ${filename}.ps
