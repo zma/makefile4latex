@@ -4,7 +4,7 @@ pdf: ps
 	ps2pdf ${filename}.ps
 
 pdf-print: ps
-	ps2pdf -dPDFSETTINGS=/printer ${filename}.ps
+	ps2pdf -dColorConversionStrategy=/LeaveColorUnchanged -dPDFSETTINGS=/printer ${filename}.ps
 
 text: html
 	html2text -width 100 -style pretty ${filename}/${filename}.html | sed -n '/./,$$p' | head -n-2 >${filename}.txt
