@@ -1,4 +1,4 @@
-filename=YOUR_MAIN_LATEX_FILE_NAME_WITHOUT_THE_.tex
+filename=MAIN_LATEX_FILE_NAME_WITHOUT_.tex
 
 pdf: ps
 	ps2pdf ${filename}.ps
@@ -10,7 +10,8 @@ text: html
 	html2text -width 100 -style pretty ${filename}/${filename}.html | sed -n '/./,$$p' | head -n-2 >${filename}.txt
 
 html:
-	latex2html -split +0 -info "" -no_navigation ${filename}
+	@#latex2html -split +0 -info "" -no_navigation ${filename}
+	htlatex ${filename}
 
 ps:	dvi
 	dvips -t letter ${filename}.dvi
